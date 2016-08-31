@@ -1,6 +1,8 @@
 var superagent = require('superagent');  
-var cheerio = require('cheerio');  
-var async = require('async');
+var cheerio    = require('cheerio');  
+var async      = require('async');
+var logger = require("./tools/logHelper").helper;
+
 
 console.log('爬虫程序开始运行......');
 
@@ -32,7 +34,9 @@ superagent
                 fetchInfo(heroId, callback);
             }, 
             function (err, result) {
+                // logger.writeInfo("哈哈1开始记录日志");  
                 console.log('抓取的角色数：' + heroes.length);
+                logger.writeInfo('抓取的角色数：' + heroes.length);
             }
         );
 
@@ -53,6 +57,7 @@ var fetchInfo = function(heroId, callback){
 
             // 对页面内容进行解析，以收集队长技能为例
             console.log(heroId + '\t' + $('.leader-skill span').last().text())
+            logger.writeInfo(heroId + '\t' + $('.leader-skill span').last().text());
 
             concurrencyCount--;
             callback(null, heroId);
