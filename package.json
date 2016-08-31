@@ -1,0 +1,18 @@
+{
+  "name": "weibo-spider",
+  "version": "1.0.0",
+  "description": "微博爬虫",
+  "main": "./db/table.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kround",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.2",
+    "cheerio": "^0.20.0",
+    "mysql": "^2.10.2",
+    "sequelize": "^3.23.3",
+    "superagent": "^1.8.3"
+  }
+}
