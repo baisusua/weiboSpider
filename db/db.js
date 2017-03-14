@@ -12,12 +12,13 @@ var dbStorage = new Sequelize(config.db_infor.db_name, config.db_infor.username,
 	}
 });
 
-dbStroage.authenticate().complete(function(err) {
-    if (!!err) {
-      	console.log('Unable to connect to the database:', err)
-    } else {
-      	console.log('Connection has been established successfully.')
-    }
-});
+dbStorage.authenticate()
+	.then(function () {
+        console.log("Connect Success! ");
+    })
+    .catch(function (err) {
+        console.log("Connect error");
+    })
+    .done();
 
 module.exports = dbStorage;

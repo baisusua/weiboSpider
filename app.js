@@ -62,5 +62,4 @@ var fetchInfo = function(heroId, callback){
             concurrencyCount--;
             callback(null, heroId);
         });
-
 };
